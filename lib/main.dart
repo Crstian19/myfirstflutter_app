@@ -18,19 +18,38 @@ class MiApp extends StatelessWidget {
               "Pokemones",
               textAlign: TextAlign.center,
             )),
-        body: Center(
-            child: Text(
-              "Hola",
-              textAlign: TextAlign.center,
-            )),
+        body: Column(
+          children: <Tarea>[
+            Tarea("Primera Tarea"),
+            Tarea("Segunda Tarea"),
+            Tarea("Tercera Tarea"),
+          ],
+        ),
+
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),
           onPressed: () {
             print("Click");
           },
         ),
-      ),
+        ),
     );
 
   }
+}
+
+class Tarea extends StatelessWidget {
+  String tarea;
+
+  Tarea(String tarea) {
+    this.tarea = tarea;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+        child: Text("Primera Tarea")
+    );
+  }
+
 }
